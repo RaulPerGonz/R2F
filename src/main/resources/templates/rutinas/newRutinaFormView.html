@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/newRutinaFormView.css}">
+</head>
+
+<body>
+    <h1>Nueva Rutina</h1>
+    <form method="post" action="#" th:action="@{/rutinas/new/submit}" th:object="${rutinaForm}">
+        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" /></label><br />
+        <label>Categoria
+            <select name="categoria" th:field="*{categoria}">
+            <option th:each="cat : ${listaCategorias}"
+            th:value="${cat.id}" th:text="${cat.nombre}">
+            </option>
+            </select>
+            </label><br/>
+        <br>
+            
+        <input type="submit" th:value="enviar" /> <br>
+
+    </form>
+    <a href="/">Inicio</a><br />
+</body>
+
+</html>

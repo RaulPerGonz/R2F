@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/indexView.css}">
+
+</head>
+
+<body>
+
+    <nav>
+        <ul class="menu">
+            <a href="#" class="logo"><img src="/images/R2FBlanco.png" alt="Reverse Logo" id="header-img" /></a>
+            <li class="item"><a href="/">Home</a></li>
+            <li class="item"><a href="/rutinas">Rutinas</a></li>
+            <li class="item"><a href="#">Cuenta</a></li>
+            <li class="item"><a href="#">Contact</a>
+            </li>
+
+            <li class="toggle"><a href="#"><i class="fas fa-bars"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-justify">
+                            <line x1="21" y1="10" x2="3" y2="10"></line>
+                            <line x1="21" y1="6" x2="3" y2="6"></line>
+                            <line x1="21" y1="14" x2="3" y2="14"></line>
+                            <line x1="21" y1="18" x2="3" y2="18"></line>
+                        </svg></i></a></li>
+        </ul>
+    </nav>
+
+
+
+
+    <div id="hero-header">
+
+
+        <video autoplay loop muted plays-inline id="back-video">
+            <source src="images/main_video.mp4" type="video/mp4">
+
+        </video>
+
+
+
+
+
+    </div>
+    <div class="infoContainer">
+        <div id="queHacemosTexto" class="textoPresentacion">
+            <h2>Entrenamiento personalizado para deportistas</h2>
+            <h3>Ofrecemos rutinas personalizadas para deportistas, que se ajustan a tus necesidades y te ayudan a
+                mejorar tu
+                rendimiento
+                Ofrecemos rutinas personalizadas para deportistas, que se ajustan a tus necesidades y te ayudan a
+                mejorar tu
+                rendimiento</h3>
+        </div>
+        <div id="queHacemosImagenContainer"><img src="images/queHacemos.jpg" id="queHacemosImagen"
+                alt="Imagen de entrenamiento deportivo"></div>
+
+    </div>
+    <div class="infoContainer">
+        <div id="queHacemosImagenContainer2"><img src="images/queHacemos.jpg" id="queHacemosImagen2"
+                alt="Imagen de entrenamiento deportivo"></div>
+
+        <div id="queHacemosTexto2" class="textoPresentacion">
+            <h2>Entrenamiento personalizado para deportistas</h2>
+            <h3>Ofrecemos rutinas personalizadas para deportistas, que se ajustan a tus necesidades y te ayudan a
+                mejorar tu
+                rendimiento
+                Ofrecemos rutinas personalizadas para deportistas, que se ajustan a tus necesidades y te ayudan a
+                mejorar tu
+                rendimiento</h3>
+        </div>
+
+    </div>
+    <div id="sobreMiContainer">
+        <div id="sobreMiContainerTexto" class="textoPresentacion">
+            <h2>Persona detras</h2>
+            <h3>Ofrecemos ruti</h3>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/indexView.js"></script>
+</body>
+
+</html>

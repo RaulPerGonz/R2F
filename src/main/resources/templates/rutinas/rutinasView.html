@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="/fragment.html::cabecera"></head>
+
+<nav>
+    <ul class="menu">
+        <a href="#" class="logo"><img src="/images/R2FBlanco.png" alt="Reverse Logo" id="header-img" /></a>
+        <li class="item"><a href="/">Home</a></li>
+        <li class="item"><a href="/rutinas">Rutinas</a></li>
+        <li class="item"><a href="#">Cuenta</a></li>
+        <li class="item"><a href="#">Contact</a>
+        </li>
+
+        <li class="toggle"><a href="#"><i class="fas fa-bars"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-justify">
+                        <line x1="21" y1="10" x2="3" y2="10"></line>
+                        <line x1="21" y1="6" x2="3" y2="6"></line>
+                        <line x1="21" y1="14" x2="3" y2="14"></line>
+                        <line x1="21" y1="18" x2="3" y2="18"></line>
+                    </svg></i></a></li>
+    </ul>
+</nav>
+<body>
+
+
+
+
+
+
+
+
+
+    <div id="contenido">
+        <div class="rutina" id="arnold">
+            <div th:text="${listaRutinas[0].nombre}" id="nombreRutina">nombre</div>
+            <a class="fill-div" th:href="@{/valoraciones/rutina/{idRutina}(idRutina=${listaRutinas[0].id})}"></a><br />
+        </div>
+
+        <div class="rutina" id="peak">
+            <div th:text="${listaRutinas[1].nombre}" id="nombreRutina">nombre</div>
+            <a class="fill-div" th:href="@{/valoraciones/rutina/{idRutina}(idRutina=${listaRutinas[1].id})}"></a><br />
+        </div>
+        <div class="rutina" id="reach">
+            <div th:text="${listaRutinas[2].nombre}" id="nombreRutina">nombre</div>
+            <a class="fill-div" th:href="@{/valoraciones/rutina/{idRutina}(idRutina=${listaRutinas[2].id})}"></a><br />
+        </div>
+
+
+        <a th:href="@{/pagina/{pagAnt}(pagAnt=${paginaAnterior})}">Pagina Anterior</a>
+        <a th:href="@{/pagina/{pagSig}(pagSig=${paginaSiguente})}">Pagina Siguente</a>
+
+    </div>
+
+
+
+
+
+
+    <div id="main">
+        <!-- JavaScript/jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="/js/indexView.js"></script>
+
+
+    </div>
+
+    <footer>
+    </footer>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko&display=swap");
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  width: auto;
+  height: auto;
+  font-family: "Noto Sans";
+  background-color: white;
+}
+
+
+
+#title-text-separator {
+  width: 5%;
+  margin-top: 1%;
+}
+
+.responsive-menu-link {
+  color: black;
+}
+
+
+
+.active-header {
+  background-color: white;
+  color: black;
+}
+
+.menu-link {
+  color: white;
+}
+
+.active-menu-links {
+  color: black;
+}
+
+
+
+#header-img {
+  margin-top: 25px;
+  margin-left: 22px;
+  width: 120px;
+  
+}
+
+#nav-bar{
+  margin-top: 15px;
+  float: right;
+}
+
+#nav-bar ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row;
+}
+
+#nav-bar li {
+  padding: 10px;
+  margin: 12px;
+}
+
+#nav-bar ul,
+a {
+  text-decoration: none;
+  
+}
+
+
+.autohide {
+  position: fixed;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 19px;
+  min-height: 100px;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+  background-color: black;
+}
+.scrolled-down {
+  transform: translateY(-100%);
+  transition: all 0.3s ease-in-out;
+}
+.scrolled-up {
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
+
+
+table {
+  margin-top: 100px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th {
+  background-color: #222422;
+  color: white;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #af4c4c;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: #ff0101;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+  padding: 0;
+}
+
+button:hover {
+  color: #000;
+}
+
+button.btn-danger {
+  color: #af4c4c;
+}
+
+button.btn-danger:hover {
+  color: #ff0000;
+}
+
+

@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko&display=swap");
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#header-img {
+  width: 100px;
+}
+
+
+body {
+  width: auto;
+  height: auto;
+
+  font-family: "Noto Sans";
+  background-color: #171717;
+}
+
+
+nav {
+  background: #171717;
+  padding: 5px 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.logo a:hover {
+  text-decoration: none;
+}
+
+.menu li {
+  font-size: 16px;
+  padding: 15px 5px;
+  white-space: nowrap;
+}
+
+.logo a,
+.toggle a {
+  font-size: 20px;
+}
+
+
+
+/* Mobile menu */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle {
+  order: 1;
+}
+
+
+
+.item {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: none;
+}
+
+.item.active {
+  display: block;
+}
+
+/* Tablet menu */
+@media all and (min-width: 600px) {
+
+
+
+  .menu {
+    justify-content: center;
+  }
+
+  .logo {
+    flex: 1;
+  }
+
+  .toggle {
+    flex: 1;
+    text-align: right;
+  }
+
+  .item.button {
+    width: auto;
+    order: 1;
+    display: block;
+  }
+
+  .toggle {
+    order: 2;
+  }
+
+
+
+
+
+
+}
+
+
+@media all and (max-width: 1100px) {
+  #hero-header {
+    height: auto;
+
+  }
+}
+
+/* Desktop menu */
+@media all and (min-width: 900px) {
+  .item {
+    display: block;
+    width: auto;
+  }
+
+
+
+  body {
+    margin: 0% 10%;
+  }
+
+  .toggle {
+    display: none;
+  }
+
+  .logo {
+    order: 0;
+  }
+
+  .item {
+    order: 1;
+  }
+
+  .button {
+    order: 2;
+  }
+
+  .menu li {
+    padding: 15px 10px;
+  }
+
+  .menu li.button {
+    padding-right: 0;
+  }
+}
+
+.rutina {
+  
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  position: relative;
+  text-align: center;
+  height: 600px;
+  object-fit: contain;
+}
+#arnold{
+  background-image: url("/images/arnold.jpg");
+
+}
+#peak{
+  background-image: url("/images/peakPerformance.jpg");
+
+}
+#reach{
+  background-image: url("/images/reach.jpg");
+
+}
+#rutina img{
+  background-attachment: scroll !important;
+}
+#nombreRutina {
+  font-family: "Teko", sans-serif;
+  color: transparent;
+  font-size: 900%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  -webkit-text-stroke: 2px #fff;
+}
+
+#nombreRutina:hover {
+  color: #fff;
+}
+
+#arnoldPic {
+  width: 100%;
+  height: auto;
+}
+
+
+a.fill-div {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+
+

@@ -1,0 +1,239 @@
+/* Fuente de Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Teko&display=swap");
+
+/* Oculta la barra de desplazamiento en Chrome */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Suaviza el desplazamiento en la página */
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  height: 100%;
+}
+
+.infoContainer {
+  height: 400px;
+
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+
+/* Establece un ancho y altura automáticos para el cuerpo del documento y una fuente predeterminada */
+body {
+  padding: 0%;
+
+  width: auto;
+  height: auto;
+  font-family: "Noto Sans";
+  background-color: #171717;
+}
+
+/* Sitúa el video al principio de la página y establece su ancho y altura automáticos */
+video {
+  position: relative;
+  left: 0;
+  top: 0;
+  height: auto;
+  width: 100%;
+
+  z-index: -1;
+}
+
+#hero-header {
+  height: 600px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+/*Texto  */
+.textoPresentacion h2,
+h3 {
+  color: white;
+}
+
+
+
+
+.textoPresentacion h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.textoPresentacion h3 {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-top: 0;
+}
+
+#queHacemosTexto {
+  text-align: left;
+  width: 30%;
+  float: left;
+  margin-left: 10px;
+}
+
+#queHacemosTexto2 {
+  text-align: left;
+  width: 45%;
+  float: right;
+
+}
+
+#sobreMiContainer {
+ height: 600px;
+}
+
+
+#sobreMiContainerTexto {
+  text-align: left;
+  width: 30%;
+  float: left;
+  margin-left: 10px;
+}
+
+/*imagenes*/
+
+#header-img {
+  width: 100px;
+}
+
+#queHacemosImagenContainer {
+  width: 68%;
+  float: right;
+  overflow: hidden;
+}
+
+#queHacemosImagenContainer2 {
+  width: 40%;
+  float: left;
+  overflow: hidden;
+}
+
+#queHacemosImagen {
+  float: left;
+  height: 550px;
+
+}
+
+
+#queHacemosImagen2 {
+  float: left;
+
+  height: 330px;
+}
+
+#sobreMiImagen {
+  height: 400px;
+}
+
+#sobreMiImagen2 {
+
+  width: 700px;
+}
+
+
+#sobreMiImagenContainer1 {
+  width: 300px;
+  height: 400px;
+  position: absolute;
+
+  overflow: hidden;
+
+}
+
+#sobreMiImagenContainer2 {
+  float: right;
+  width: 50%;
+  overflow: hidden;
+  height: 550px;
+}
+
+#rutinas {
+  flex-flow: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.imagenRutina {
+  width: 70%;
+  margin: 10px 0px;
+  float: left;
+  object-fit: cover;
+}
+
+
+nav {
+  background: #171717;
+  padding: 5px 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.logo a:hover {
+  text-decoration: none;
+}
+
+.menu li {
+  font-size: 16px;
+  padding: 15px 5px;
+  white-space: nowrap;
+}
+
+.logo a,
+.toggle a {
+  font-size: 20px;
+}
+
+#explorar {
+  text-align: center;
+  color: white;
+}
+
+/* Mobile menu */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle {
+  order: 1;
+}
+
+#rutinas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: none;
+}
+
+.item.active {
+  display: block;
+}
+
+#explorar{
+  marg

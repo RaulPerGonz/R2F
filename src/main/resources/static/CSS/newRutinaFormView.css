@@ -1,0 +1,43 @@
+/* Establece el color de fondo de la página en gris claro */
+body {
+    background-color: #252525;
+  }
+  
+  /* Establece el color de fuente en gris oscuro */
+  body, input, select {
+    color: rgb(255, 255, 255);
+  }
+  
+  /* Establece el color de fuente de los enlaces en azul claro */
+  a {
+    color: #ffffff;
+  }
+  
+  /* Establece el color de fondo de los botones de envío en azul claro */
+  input[type="submit"] {
+    background-color: transparent;
+    border-color: #ffffff;
+    color: white;
+  }
+  
+  /* Establece el borde y el color de fondo de los elementos de formulario en gris claro */
+  form label, form input, form select {
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    
+  }
+  
+  /* Aumenta el tamaño de la fuente de los títulos */
+  h1 {
+    font-size: 32px;
+  }
+  
+  /* Añade una sombra suave a los elementos de formulario */
+  form label, form input, form select {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Añade una transición suave al color de fondo de los botones de envío al pasar el mouse por encima */
+  input[type="submit"]:hover {
+    background-color: #00acc1;
+  }
