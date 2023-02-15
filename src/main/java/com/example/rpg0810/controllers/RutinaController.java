@@ -19,7 +19,7 @@ import com.example.rpg0810.services.RutinaService.RutinaServiceImpl;
 
 
 @Controller
-@RequestMapping("/rutinas")
+
 public class RutinaController {
 
     @Autowired
@@ -27,14 +27,14 @@ public class RutinaController {
     @Autowired
     public CategoriaServiceImplBD categoriaService;
 
-    @GetMapping("")
+    @GetMapping("/rutinas")
     public String mostrarProductos(Model model) {
         return "redirect:/rutinas/pagina/0";
 
     }
 
 
-    @GetMapping("/pagina/{id}")
+    @GetMapping("/rutinas/pagina/{id}")
     public String showPage(@PathVariable Integer id, Model model) {
         int ultPag = rutinaService.getTotalPaginas() - 1;
         if (id < 0 || id > ultPag)
@@ -47,16 +47,23 @@ public class RutinaController {
         return "rutinas/rutinasView";
     }
 
+    @GetMapping("/rutina/{id}")
+    public String showRutina(@PathVariable Integer id,Model model) {
+        model.addAttribute("rutina", rutinaService.findById(id));
+      
+        return "rutinas/rutinaView";
+    }
 
 
-    @GetMapping("/new")
+
+    @GetMapping("/rutina/new")
     public String showNew(Model model) {
         model.addAttribute("rutinaForm", new Rutina());
         model.addAttribute("listaCategorias", categoriaService.findAll());
         return "rutinas/newRutinaFormView";
     }
 
-    @PostMapping("/new/submit")
+    @PostMapping("/rutina/new/submit")
     public String showNewSubmit(
             @Valid @ModelAttribute("rutinaForm") Rutina nuevaRutina,
             BindingResult bindingResult) {
@@ -66,7 +73,7 @@ public class RutinaController {
         return "redirect:/rutinas/pagina/0";
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/rutina/edit/{id}")
     public String showEditForm(@PathVariable long id, Model model) {
         Rutina rutina = rutinaService.findById(id);
         // el commandobject del formulario es el empleado con el id solicitado
@@ -78,7 +85,7 @@ public class RutinaController {
         return "redirect:/";
     }
 
-    @PostMapping("/edit/submit")
+    @PostMapping("/rutina/edit/submit")
     public String showEditSubmit(
             @Valid @ModelAttribute("empleadoForm") Rutina rutina,
             BindingResult bindingResult) {
@@ -90,7 +97,7 @@ public class RutinaController {
         }
     }
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("/rutina/delete/{id}")
     public String showDelete(@PathVariable long id) {
        // rutinaService.delete(id);
         return "redirect:/productos";

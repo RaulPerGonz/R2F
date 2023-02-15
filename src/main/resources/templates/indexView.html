@@ -6,34 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <link rel="stylesheet" th:href="@{/css/indexView.css}">
+
 
 </head>
 
 <body>
 
+
+
     <nav>
-        <ul class="menu">
-            <a href="#" class="logo"><img src="/images/R2FBlanco.png" alt="Reverse Logo" id="header-img" /></a>
-            <li class="item"><a href="/">Home</a></li>
-            <li class="item"><a href="/rutinas">Rutinas</a></li>
-            <li class="item"><a href="#">Cuenta</a></li>
-            <li class="item"><a href="#">Contact</a>
-            </li>
+        <a href="#" class="logo"><img src="/images/R2FBlanco.png" alt="Reverse Logo" id="header-img" /></a>
+        <div class="toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu">
+            <a th:href="@{/}">Inicio</a>
+            <a th:href="@{/rutinas}">Rutinas</a>
+            <a th:href="@{/usuario}">Cuenta</a>
 
-            <li class="toggle"><a href="#"><i class="fas fa-bars"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-justify">
-                            <line x1="21" y1="10" x2="3" y2="10"></line>
-                            <line x1="21" y1="6" x2="3" y2="6"></line>
-                            <line x1="21" y1="14" x2="3" y2="14"></line>
-                            <line x1="21" y1="18" x2="3" y2="18"></line>
-                        </svg></i></a></li>
-        </ul>
+        </div>
     </nav>
-
-
-
+    <hr style="border: none; border-top: 1px solid white;">
 
     <div id="hero-header">
 
@@ -80,9 +77,37 @@
     <div id="sobreMiContainer">
         <div id="sobreMiContainerTexto" class="textoPresentacion">
             <h2>Persona detras</h2>
-            <h3>Ofrecemos ruti</h3>
+            <h3>Ofrecemos rutinas personalizadas para deportistas, que se ajustan a tus necesidades y te ayudan a
+                mejorar tu
+                rendimient</h3>
+            <div id="sobreMiImagenContainer1"><img src="images/sobreMi1.jpg" id="sobreMiImagen"></div>
+        </div>
+        <div id="sobreMiImagenContainer2"><img src="images/sobreMi2.jpg" id="sobreMiImagen2"></div>
+    </div>
+
+
+    <div id="explorarTexto">
+        <h2>Explorar Rutinas</h2>
+    </div>
+    <div id="containerExplorar">
+        <img src="images/rutinaExplorar.jpg" class="exlorarRuitinaImagen">
+        <img src="images/rutinaExplorar.jpg" class="exlorarRuitinaImagen">
+        <img src="images/rutinaExplorar.jpg" class="exlorarRuitinaImagen">
+        <img src="images/rutinaExplorar.jpg" class="exlorarRuitinaImagen">
+    </div>
+
+
+    <div id="containerSuscribirte">
+        <img src="images/subscribirte.jpg" id="subsImagen">
+        <div id="textoSub">
+            <h1>Suscribirse</h1>
+            <p>Recibe nuestras últimas novedades y promociones.</p>
+            <button>Suscríbete</button>
         </div>
     </div>
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/js/indexView.js"></script>
 </body>

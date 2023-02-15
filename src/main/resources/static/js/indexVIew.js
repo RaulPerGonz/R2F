@@ -1,12 +1,11 @@
 
-$(function() {
-  $(".toggle").on("click", function() {
-      if ($(".item").hasClass("active")) {
-          $(".item").removeClass("active");
-          $(this).find("a").html("<i class='fas fa-bars'></i>");
-      } else {
-          $(".item").addClass("active");
-          $(this).find("a").html("<i class='fas fa-times'></i>");
-      }
-  });
+
+const toggle = document.querySelector('.toggle');
+const menu = document.querySelector('.menu');
+const nav = document.querySelector('nav');
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('active');
 });
+toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });

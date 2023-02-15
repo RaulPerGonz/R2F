@@ -6,12 +6,52 @@
   display: none;
 }
 
-/* Suaviza el desplazamiento en la página */
+
 html {
   scroll-behavior: smooth;
-  margin: 0;
   height: 100%;
 }
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  height: auto;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu a {
+  margin-left: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.toggle span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  margin-bottom: 5px;
+  background-color: #ffffff;
+}
+
 
 .infoContainer {
   height: 400px;
@@ -20,18 +60,22 @@ html {
   overflow: hidden;
 }
 
+.line {
+  height: 1px;
+  background-color: white;
+  width: 100%;
+  margin-bottom: 15px;
+}
 
-/* Establece un ancho y altura automáticos para el cuerpo del documento y una fuente predeterminada */
 body {
   padding: 0%;
-
+  margin: 0px 160px;
   width: auto;
   height: auto;
   font-family: "Noto Sans";
   background-color: #171717;
 }
 
-/* Sitúa el video al principio de la página y establece su ancho y altura automáticos */
 video {
   position: relative;
   left: 0;
@@ -85,7 +129,7 @@ h3 {
 }
 
 #sobreMiContainer {
- height: 600px;
+  height: 600px;
 }
 
 
@@ -116,24 +160,22 @@ h3 {
 
 #queHacemosImagen {
   float: left;
-  height: 550px;
+  width: 100%;
 
 }
 
 
 #queHacemosImagen2 {
   float: left;
-
-  height: 330px;
+  width: 100%;
 }
 
 #sobreMiImagen {
-  height: 400px;
+  width: 100%;
 }
 
 #sobreMiImagen2 {
-
-  width: 700px;
+  width: 100%;
 }
 
 
@@ -169,53 +211,18 @@ h3 {
 
 nav {
   background: #171717;
-  padding: 5px 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
-ul {
-  list-style-type: none;
-}
 
-a {
-  color: white;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.logo a:hover {
-  text-decoration: none;
-}
-
-.menu li {
-  font-size: 16px;
-  padding: 15px 5px;
-  white-space: nowrap;
-}
-
-.logo a,
-.toggle a {
-  font-size: 20px;
-}
 
 #explorar {
   text-align: center;
   color: white;
 }
 
-/* Mobile menu */
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.toggle {
-  order: 1;
-}
 
 #rutinas {
   display: flex;
@@ -224,16 +231,125 @@ a:hover {
   align-items: center;
 }
 
-.item {
+
+#explorarTexto {
   width: 100%;
   text-align: center;
-  order: 3;
-  display: none;
+  color: white;
+
 }
 
-.item.active {
-  display: block;
+#containerExplorar {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
-#explorar{
-  marg
+.exlorarRuitinaImagen {
+  width: 20%;
+
+  float: left;
+  object-fit: contain;
+}
+
+#containerSuscribirte {
+  margin-top: 40px;
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#containerSuscribirte button {
+  position: relative;
+  display: inline-block;
+  background-color: rgb(197, 197, 199);
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 18px;
+
+}
+
+#subsImagen {
+  
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+#textoSub {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+@media (max-width: 1000px) {
+  body {
+    margin: 0;
+  }
+
+
+
+  #hero-header {
+    height: 350px;
+  }
+
+  .active {
+    position: relative;
+
+
+  }
+
+  .menu {
+    
+    display: none;
+    top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;height:200px ;
+  }
+
+  .menu.active {
+    position: absolute;
+    display: block;
+    background-color: #171717;
+
+  }
+
+  .menu a {
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  .toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 500px) {
+  
+  #hero-header {
+    height: 215px;
+  }
+  #subsImagen {
+  
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+}
