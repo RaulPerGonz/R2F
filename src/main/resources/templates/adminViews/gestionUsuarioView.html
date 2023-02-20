@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/gestionUsuarioView.css}">
+</head>
+
+<body>
+
+    <nav>
+        <a href="#" class="logo"><img src="/images/R2FBlanco.png" alt="Reverse Logo" id="header-img" /></a>
+        <div class="toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu">
+            <a th:href="@{/}">Inicio</a>
+            <a th:href="@{/rutinas}">Rutinas</a>
+            <a th:href="@{/usuario}">Cuenta</a>
+
+        </div>
+    </nav>
+    <hr style="border: none; border-top: 1px solid white;">
+    <div id="gestionContenedor">
+        <h1>Gestion de Usuarios</h1>
+        <div id="menuLateral">
+            <ol>
+                <li>Todos los usuarios</li>
+                <li>Suscripciones</li>
+              </ol>
+        </div>
+        <div id="tablaUsuarios">
+          
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Fecha de registro</th>
+                        <th>Valoraciones</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="usuario : ${usuarios}">
+                        <td th:text="${usuario.id}">Id</td>
+                        <td th:text="${usuario.nombre}">Nombre</td>
+                        <td th:text="${usuario.fechaRegistro}">Fecha de registro</td>
+                        <td><a th:href="@{/valoraciones/usuario/{idUsuario}(idUsuario=${usuario.id})}">Valoraciones</a>
+                        </td>
+                        <td>
+
+                            <form th:action="@{/usuario/{id}(id=${usuario.id})}" method="post"
+                                style="display: inline-block;">
+                                <button type="submit" class="btn btn-danger btn-sm">Ver</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

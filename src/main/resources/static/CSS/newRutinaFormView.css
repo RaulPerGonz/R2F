@@ -1,43 +1,111 @@
-/* Establece el color de fondo de la página en gris claro */
+html {
+  scroll-behavior: smooth;
+}
+
+#header-img {
+  width: 100px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #171717;
+  height: auto;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu a {
+  margin-left: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.toggle span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  margin-bottom: 5px;
+  background-color: #ffffff;
+}
+
+.line {
+  height: 1px;
+  background-color: white;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
 body {
-    background-color: #252525;
+  width: auto;
+  height: auto;
+  margin: 0px 160px;
+  font-family: "Noto Sans";
+  background-color: #171717;
+}
+
+h1,label{
+  color: #fff;
+}
+
+input[type="text"], select {
+  color: black;
+}
+
+@media (max-width: 1000px) {
+  body {
+      margin: 0;
   }
-  
-  /* Establece el color de fuente en gris oscuro */
-  body, input, select {
-    color: rgb(255, 255, 255);
+
+
+  .active {
+      position: relative;
+
+
   }
-  
-  /* Establece el color de fuente de los enlaces en azul claro */
-  a {
-    color: #ffffff;
+
+  .menu {
+
+      display: none;
+      top: 75px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 200px;
   }
-  
-  /* Establece el color de fondo de los botones de envío en azul claro */
-  input[type="submit"] {
-    background-color: transparent;
-    border-color: #ffffff;
-    color: white;
+
+  .menu.active {
+      position: absolute;
+      display: block;
+      background-color: #171717;
+
   }
-  
-  /* Establece el borde y el color de fondo de los elementos de formulario en gris claro */
-  form label, form input, form select {
-    border: 1px solid #ffffff;
-    background-color: transparent;
-    
+
+  .menu a {
+      text-decoration: none;
+      color: #fff;
+      text-align: center;
+      display: block;
+      width: 100%;
   }
-  
-  /* Aumenta el tamaño de la fuente de los títulos */
-  h1 {
-    font-size: 32px;
+
+  .toggle {
+      display: block;
   }
-  
-  /* Añade una sombra suave a los elementos de formulario */
-  form label, form input, form select {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Añade una transición suave al color de fondo de los botones de envío al pasar el mouse por encima */
-  input[type="submit"]:hover {
-    background-color: #00acc1;
-  }
+}

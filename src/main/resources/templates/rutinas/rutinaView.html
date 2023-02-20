@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head th:replace="/fragment.html::cabecera"></head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" th:href="@{/css/rutinaView.css}">
+
+
+</head>
 
 <nav>
-    <a href="#" class="logo"><img src="/images/R2FBlanco.png" alt="Reverse Logo" id="header-img" /></a>
+    <a href="/" class="logo"><img src="/images/R2FBlanco.png" alt="Reverse Logo" id="header-img" /></a>
     <div class="toggle">
         <span></span>
         <span></span>
@@ -20,34 +29,72 @@
 <hr style="border: none; border-top: 1px solid white;">
 
 <body>
+    <div id="containerRutinaTitulo">
+        <img src="/images/subscribirte.jpg" id="imagenRutina">
+        <div id="textoRutinaTitulo">
+            <div th:text="${rutina.nombre}" id="nombreRutina">nombre</div>
+        </div>
+        <div id="textoDescr">
+            <!-- <div th:text="${rutina.descripcion}" id="descripcionRutina"> -->
+            <div id="descripcionRutinaTitulo" th:text="${rutina.descripcion}">
+                Descripcion de la rutina, contando un poco lo que consiste o su esencia principal
+            </div>
+        </div>
+    </div>
+    <div id="publicoObjetivoTexto">
+        PARA QUIEN VA DIRIGIDA
+    </div>
+    <div id="caracteristicas">
+        <div class="caracteristica"></div>
+        <div class="caracteristica"></div>
+        <div class="caracteristica" id="caracterisitcaUltima"></div>
+    </div>
 
+    <div class="infoContainer">
+        <div id="descripcionRutina" class="textoPresentacion">
 
-
-
-
-
-
-
-
-    
-
-
-
-
-
-    <div id="main">
-        <!-- JavaScript/jQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="/js/indexView.js"></script>
-
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam cursus dui nunc, mollis aliquam orci
+                vestibulum eget. Nulla elementum arcu ac arcu iaculis tristique. Cras ante felis, maximus blandit auctor
+                ac, gravida a nisi. Etiam mi ligula, pharetra vel arcu id, tempus interdum mauris. Proin at sollicitudin
+                odio. Pellentesque sollicitudin mollis elit, ac dignissim nisi tempor nec. Maecenas iaculis neque sed
+                lorem pulvinar ultrices. Fusce placerat, arcu non facilisis tempor, tellus nisi egestas nibh, vel
+                tincidunt massa eros sed risus. Nam dictum varius auctor. Pellentesque habitant morbi tristique s</h3>
+        </div>
+        <div id="descripcionRutinaImagenContainer"><img src="/images/queHacemos.jpg" id="descripcion"
+                alt="Imagen de entrenamiento deportivo"></div>
 
     </div>
+    <div id="containerSuscribirte">
+        <img src="/images/subscribirte.jpg" id="subsImagen">
+        <div id="textoSub">
+            <h1>Suscribirse</h1>
+            <p>Recibe nuestras últimas novedades y promociones.</p>
+            <button>Suscríbete</button>
+        </div>
+    </div>
+
+    <div id="valoracionInput">
+
+        <h2>Valoraciones</h2>
+
+        <form action="/action_page.php">
+            <textarea id="ValoracionTextArea" maxlength="500"></textarea>
+
+            <div id="contadorLetras"></div>
+            <div id="botonContainer">
+                <input type="submit" id="botonValoracion" value="Submit">
+            </div>
+
+        </form>
+    </div>
+
 
     <footer>
     </footer>
 
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/indexView.js"></script>
+    <script src="/js/rutinaView.js"></script>
 </body>
 
 </html>

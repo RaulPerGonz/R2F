@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/newRutinaFormView.css}">
+</head>
+
+<body>
+
+    <nav>
+        <a href="#" class="logo"><img src="/images/R2FBlanco.png" alt="Reverse Logo" id="header-img" /></a>
+        <div class="toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu">
+            <a th:href="@{/}">Inicio</a>
+            <a th:href="@{/rutinas}">Rutinas</a>
+            <a th:href="@{/usuario}">Cuenta</a>
+            <a th:href="@{/gestion/usuarios}">Usuarios</a>
+            <a th:href="@{/gestion/rutinas}">RutinasGestion</a>
+
+        </div>
+    </nav>
+    <hr style="border: none; border-top: 1px solid white;">
+
+
+    <h1>Nueva Rutina</h1>
+    <form method="post" action="#" th:action="@{/rutina/new/submit}" th:object="${rutinaForm}">
+        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" /></label><br />
+        <p>
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" th:field="*{descripcion}"></textarea>
+        </p>
+        <label>Categoria
+            <select name="categoria" th:field="*{categoria}">
+                <option th:each="cat : ${listaCategorias}" th:value="${cat.id}" th:text="${cat.nombre}">
+                </option>
+            </select>
+        </label><br />
+        <label for="objetivos">Objetivos:</label>
+        <textarea id="objetivos" name="objetivos" class="form-control"></textarea>
+        <br>
+        <p>
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" name="precio" th:field="*{precio}">
+        </p>
+        <label for="acceso">Acceso:</label>
+        <select id="acceso" name="acceso" th:field="*{acceso}">
+            <option value="Público">Público</option>
+            <option value="Privado">Privado</option>
+        </select>
+        <br>
+
+        <input type="submit" th:value="enviar" /> <br>
+
+    </form>
+    
+</body>
+
+</html>

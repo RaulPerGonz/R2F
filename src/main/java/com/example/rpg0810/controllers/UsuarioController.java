@@ -12,17 +12,16 @@ import com.example.rpg0810.domain.Usuario;
 import com.example.rpg0810.services.UsuarioService.UsuarioService;
 
 @Controller
-@RequestMapping("/usuario")
 public class UsuarioController {
     @Autowired
     UsuarioService usuarioService;
 
-    @GetMapping("")
+    @GetMapping("/gestion/usuarios")
     public String mostrarProductos(Model model) {
 
         List<Usuario> usuarios = usuarioService.findAll();
         model.addAttribute("usuarios", usuarios);
-        return "usuario/usuarioView";
+        return "adminViews/gestionUsuarioView";
 
     }
 

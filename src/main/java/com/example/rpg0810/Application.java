@@ -1,6 +1,7 @@
 package com.example.rpg0810;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -36,11 +37,17 @@ public class Application {
             usuarioService.add(new Usuario("Raul", LocalDate.now()));
             usuarioService.add(new Usuario("Pedro", LocalDate.now()));
 
-            rutinaService.add(new Rutina("PEAK PERFORMANCE", categoriaService.findById(1)));
-            rutinaService.add(new Rutina("ARNOLD SPLIT", categoriaService.findById(1)));
-            rutinaService.add(new Rutina("REACH THE TOP", categoriaService.findById(2)));
+            rutinaService.add(new Rutina("PEAK PERFORMANCE", categoriaService.findById(1),
+                    "Rutina avanzada para mejorar el rendimiento físico",
+                    Arrays.asList("Mejora de la resistencia", "Fortalecimiento muscular"), 49.99, "Premium"));
+            rutinaService.add(
+                    new Rutina("WEIGHT LOSS", categoriaService.findById(1), "Rutina para quemar grasa y bajar de peso",
+                            Arrays.asList("Pérdida de peso", "Mejora de la condición física"), 19.99, "Premium"));
+            rutinaService.add(
+                    new Rutina("LEAN & STRONG", categoriaService.findById(2), "Rutina para tonificar y ganar fuerza",
+                            Arrays.asList("Tonificación muscular", "Mejora de la fuerza"), 29.99, "Premium"));
 
-            rutinaValoracionService.add(new RutinaValoracion(rutinaService.findByNombre("ARNOLD SPLIT"),
+            rutinaValoracionService.add(new RutinaValoracion(rutinaService.findByNombre("PEAK PERFORMANCE"),
                     valoracionService.add(new Valoracion(7L, "Buena rutina :)")), usuarioService.findByNombre("Raul")));
 
         };

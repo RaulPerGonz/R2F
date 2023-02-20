@@ -47,6 +47,13 @@ public class RutinaController {
         return "rutinas/rutinasView";
     }
 
+    @GetMapping("/gestion/rutinas")
+    public String mostrarRutinas( Model model) {
+        
+        model.addAttribute("listaRutinas", rutinaService.findAll());
+        return "adminViews/gestionRutinasView";
+    }
+
     @GetMapping("/rutina/{id}")
     public String showRutina(@PathVariable Integer id,Model model) {
         model.addAttribute("rutina", rutinaService.findById(id));
@@ -60,7 +67,7 @@ public class RutinaController {
     public String showNew(Model model) {
         model.addAttribute("rutinaForm", new Rutina());
         model.addAttribute("listaCategorias", categoriaService.findAll());
-        return "rutinas/newRutinaFormView";
+        return "adminViews/newRutinaView";
     }
 
     @PostMapping("/rutina/new/submit")
@@ -78,8 +85,9 @@ public class RutinaController {
         Rutina rutina = rutinaService.findById(id);
         // el commandobject del formulario es el empleado con el id solicitado
         if (rutina != null) {
-            model.addAttribute("productoForm", rutina);
-            return "productoViews/editarProductosView";
+            model.addAttribute("rutinaForm", rutina);
+            model.addAttribute("listaCategorias", categoriaService.findAll());
+            return "adminViews/editarRutinaView";
         }
         // si no lo encuentra vuelve a la página de inicio.
         return "redirect:/";
@@ -87,13 +95,13 @@ public class RutinaController {
 
     @PostMapping("/rutina/edit/submit")
     public String showEditSubmit(
-            @Valid @ModelAttribute("empleadoForm") Rutina rutina,
+            @Valid @ModelAttribute("rutinaForm") Rutina rutina,
             BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "editarProductosView";
+            return "adminViews/editarRutinaView";
         } else {
            // rutinaService.edit(rutina);
-            return "redirect:/productos";
+            return "redirect:/rutinas";
         }
     }
 

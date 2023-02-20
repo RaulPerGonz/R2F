@@ -26,6 +26,16 @@ public class MainController {
         return "indexView";
     }
 
+    @GetMapping("/login")
+    public String mostrarLogin() {
+        return "loginViews/loginView";
+    }
+
+    @GetMapping("/registro")
+    public String mostrarRegistro() {
+        return "loginViews/registroView";
+    }
+
     @GetMapping("/quienesSomos")
     public String mostrarQuienesSomos() {
         return "quienesSomosView";

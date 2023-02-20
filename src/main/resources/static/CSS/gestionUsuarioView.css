@@ -1,0 +1,165 @@
+html {
+    scroll-behavior: smooth;
+}
+
+#header-img {
+    width: 100px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #171717;
+    height: auto;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu a {
+    margin-left: 20px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.toggle span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    margin-bottom: 5px;
+    background-color: #ffffff;
+}
+
+.line {
+    height: 1px;
+    background-color: white;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+body {
+    width: auto;
+    height: auto;
+    margin: 0px 160px;
+    font-family: "Noto Sans";
+    background-color: #171717;
+}
+
+#gestionContenedor{
+margin-top: 100px;
+}
+
+#tablaUsuarios{
+    width: 70%;
+    float: right;
+}
+#menuLateral{
+    color: #fff;
+    width: 30%;
+    float: left;
+}
+ol {
+    list-style-type: disc;
+  }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border-bottom: 1px solid #fff;
+
+    padding: 8px;
+    text-align: left;
+
+}
+
+h1 {
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+td {
+    color: #fff;
+}
+
+th {
+    color: #a5a0a0;
+}
+
+
+
+td button {
+    background-color: #dc3545;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px 15px;
+}
+
+td button:hover {
+    background-color: #c82333;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    body {
+        margin: 0;
+    }
+
+
+    .active {
+        position: relative;
+
+
+    }
+
+    .menu {
+
+        display: none;
+        top: 75px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 200px;
+    }
+
+    .menu.active {
+        position: absolute;
+        display: block;
+        background-color: #171717;
+
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: #fff;
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+
+    .toggle {
+        display: block;
+    }
+}

@@ -4,7 +4,7 @@
 <head th:replace="/fragment.html::cabecera"></head>
 
 <nav>
-    <a href="#" class="logo"><img src="/images/R2FBlanco.png" alt="Reverse Logo" id="header-img" /></a>
+    <a href="/" class="logo"><img src="/images/R2FBlanco.png" alt="Reverse Logo" id="header-img" /></a>
     <div class="toggle">
         <span></span>
         <span></span>
@@ -29,7 +29,7 @@
 
 
 
-    <div id="contenido">
+    <!-- <div id="contenido">
 
 
         <a class="fill-div" th:href="@{/rutina/{idRutina}(idRutina=${listaRutinas[0].id})}">
@@ -53,9 +53,17 @@
 
 
 
+    </div> -->
+
+    <div id="contenido">
+        <div th:each="rutina : ${listaRutinas}">
+            <a class="fill-div" th:href="@{/rutina/{idRutina}(idRutina=${rutina.id})}">
+                <div class="rutina" id="reach">
+                    <div th:text="${rutina.nombre}" id="nombreRutina">nombre</div>
+                </div>
+            </a>
+        </div>
     </div>
-
-
 
 
 
