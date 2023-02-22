@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" th:href="@{/css/categoriasView.css}">
+
+</head>
+
+
+<body>
+
+
+  <header class="autohide navbar" id="header">
+    <a href="#" id="image-link"><img src="/images/R2FBlanco.png" alt="Reverse Logo" id="header-img" /></a>
+
+    <nav id="nav-bar">
+        <ul>
+            <li class="nav-link" id="menu-item"><a th:href="@{/index}" class="menu-link"> Home </a></li>
+            <li class="nav-link" id="menu-item"><a th:href="@{/quienesSomos}" class="menu-link"> Quienes somos
+                </a>
+            </li>
+            <li class="nav-link" id="menu-item"><a th:href="@{/rutinas}" class="menu-link"> Rutinas
+                </a></li>
+            <li class="nav-link" id="menu-item"><a th:href="@{/contacta}" class="menu-link"> Contacta </a>
+            </li>
+
+
+
+
+        </ul>
+    </nav>
+</header>
+  <h1>Pagina de Categorias</h1>
+
+  <div class="container">
+
+
+    <h1 th:text="${categoria.nombre}">error</h1>
+
+    <h2>Rutinas</h2>
+    <ul>
+      <li th:each="rutina : ${rutinas}">
+        <a th:text="${rutina.nombre}">{{rutina.nombre}}</a>
+      </li>
+    </ul>
+
+    <a href="/categoria/new">Nueva categoria</a><br />
+  </div>
+
+  
+  
+
+
+</body>
+
+</html>

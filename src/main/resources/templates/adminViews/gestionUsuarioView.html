@@ -44,7 +44,7 @@
                     <tr>
                         <th>Id</th>
                         <th>Nombre</th>
-                        <th>Fecha de registro</th>
+                        <th>Contraseña</th>
                         <th>Valoraciones</th>
                         <th>Acciones</th>
                     </tr>
@@ -53,7 +53,7 @@
                     <tr th:each="usuario : ${usuarios}">
                         <td th:text="${usuario.id}">Id</td>
                         <td th:text="${usuario.nombre}">Nombre</td>
-                        <td th:text="${usuario.fechaRegistro}">Fecha de registro</td>
+                        <td th:text="${usuario.password}">Contraseña</td>
                         <td><a th:href="@{/valoraciones/usuario/{idUsuario}(idUsuario=${usuario.id})}">Valoraciones</a>
                         </td>
                         <td>

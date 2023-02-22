@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="/fragment.html::cabecera"></head>
+
+<nav>
+    <a href="/" class="logo"><img src="/images/R2FBlanco.png" alt="Reverse Logo" id="header-img" /></a>
+    <div class="toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="menu">
+        <a th:href="@{/}">Inicio</a>
+        <a th:href="@{/rutinas}">Rutinas</a>
+        <a th:href="@{/usuario}">Cuenta</a>
+
+    </div>
+</nav>
+<hr style="border: none; border-top: 1px solid white;">
+
+<body>
+
+
+
+
+
+
+
+
+
+    <!-- <div id="contenido">
+
+
+        <a class="fill-div" th:href="@{/rutina/{idRutina}(idRutina=${listaRutinas[0].id})}">
+            <div class="rutina" id="arnold">
+                <div th:text="${listaRutinas[0].nombre}" id="nombreRutina">nombre</div>
+
+            </div>
+        </a>
+        <a class="fill-div" th:href="@{/rutina/{idRutina}(idRutina=${listaRutinas[1].id})}">
+            <div class="rutina" id="peak">
+                <div th:text="${listaRutinas[1].nombre}" id="nombreRutina">nombre</div>
+
+            </div>
+        </a>
+
+        <a class="fill-div" th:href="@{/rutina/{idRutina}(idRutina=${listaRutinas[2].id})}">
+            <div class="rutina" id="reach">
+                <div th:text="${listaRutinas[2].nombre}" id="nombreRutina">nombre</div>
+            </div>
+        </a>
+
+
+
+    </div> -->
+
+    <div id="contenido">
+        <div th:each="rutina : ${listaRutinas}">
+            <a class="fill-div" th:href="@{/rutina/{idRutina}(idRutina=${rutina.id})}">
+                <div class="rutina" id="reach">
+                    <div th:text="${rutina.nombre}" id="nombreRutina">nombre</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+
+
+    <div id="main">
+        <!-- JavaScript/jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="/js/indexView.js"></script>
+
+
+    </div>
+
+    <footer>
+    </footer>
+
+
+
+</body>
+
+</html>

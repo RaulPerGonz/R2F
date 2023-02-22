@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/usuarioView.css}">
+</head>
+<body>
+    <header class="autohide navbar" id="header">
+        <a href="#" id="image-link"><img src="/images/R2FBlanco.png" alt="Reverse Logo" id="header-img" /></a>
+    
+        <nav id="nav-bar">
+            <ul>
+                <li class="nav-link" id="menu-item"><a th:href="@{/index}" class="menu-link"> Home </a></li>
+                <li class="nav-link" id="menu-item"><a th:href="@{/quienesSomos}" class="menu-link"> Quienes somos
+                    </a>
+                </li>
+                <li class="nav-link" id="menu-item"><a th:href="@{/rutinas}" class="menu-link"> Rutinas
+                    </a></li>
+    
+                <li class="nav-link" id="menu-item"><a th:href="@{/rutinas/new}" class="menu-link"> Nueva Rutina </a>
+                </li>
+                <li class="nav-link" id="menu-item"><a th:href="@{/contacta}" class="menu-link"> Contacta </a>
+                </li>
+    
+    
+    
+    
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Valoraciones de rutina</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Usuario</th>
+          <th>Puntuación</th>
+          <th>Comentarios</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="rutinaValoracion : ${listaRutinaValoracion}">
+          <td th:text="${rutinaValoracion.usuario.nombre}">Nombre del usuario</td>
+          <td th:text="${rutinaValoracion.valoracion.puntuacion}">Puntuación</td>
+          <td th:text="${rutinaValoracion.valoracion.comentarios}">Comentarios</td>
+        </tr>
+      </tbody>
+    </table>
+</body>
+</html>
