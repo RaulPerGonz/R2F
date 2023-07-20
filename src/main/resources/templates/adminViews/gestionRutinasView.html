@@ -23,8 +23,9 @@
         </div>
         <div class="menu">
             <a th:href="@{/}">Inicio</a>
-            <a th:href="@{/rutinas}">Rutinas</a>
-            <a th:href="@{/usuario}">Cuenta</a>
+            <a th:href="@{/public/rutinas}">Rutinas</a>
+            <a th:href="@{/gestion/usuarios}">Usuarios</a>
+            <a th:href="@{/gestion/rutinas}">RutinasGestion</a>
 
         </div>
     </nav>
@@ -62,10 +63,13 @@
                                 <button type="submit" class="btn btn-danger btn-sm">Ver</button>
                             </form>
                         </td>
+                        <td>
+                            <a th:href="@{/rutina/delete/{id}(id=${rutina.id})}"><button >Eliminar</button></a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
-
+            <a th:href="@{/rutina/new}"><button id="nuevoBoton">Nueva</button></a>
         </div>
 
 

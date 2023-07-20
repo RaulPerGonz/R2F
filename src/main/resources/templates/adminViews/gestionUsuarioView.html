@@ -23,8 +23,9 @@
         </div>
         <div class="menu">
             <a th:href="@{/}">Inicio</a>
-            <a th:href="@{/rutinas}">Rutinas</a>
-            <a th:href="@{/usuario}">Cuenta</a>
+            <a th:href="@{/public/rutinas}">Rutinas</a>
+            <a th:href="@{/gestion/usuarios}">Usuarios</a>
+            <a th:href="@{/gestion/rutinas}">RutinasGestion</a>
 
         </div>
     </nav>
@@ -58,7 +59,7 @@
                         </td>
                         <td>
 
-                            <form th:action="@{/usuario/{id}(id=${usuario.id})}" method="post"
+                            <form th:action="@{/gestion/usuarios/edit/{id}(id=${usuario.id})}" method="post"
                                 style="display: inline-block;">
                                 <button type="submit" class="btn btn-danger btn-sm">Ver</button>
                             </form>

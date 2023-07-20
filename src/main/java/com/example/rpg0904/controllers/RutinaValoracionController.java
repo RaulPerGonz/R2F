@@ -38,7 +38,7 @@ public class RutinaValoracionController {
         return "usuario/valoracionesUsuarioView";
     }
 
-    @GetMapping("/valoraciones/rutina/{idRutina}")
+    @GetMapping("/public/valoraciones/rutina/{idRutina}")
     public String mostrarValoracionesDeRutina(@PathVariable long idRutina, Model model) {
         model.addAttribute("listaRutinaValoracion", rutinaValoracionService.findAllByRutinaId(idRutina));
         return "rutinas/valoracionesRutinaView";

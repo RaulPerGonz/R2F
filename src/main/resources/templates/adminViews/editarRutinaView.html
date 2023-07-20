@@ -23,11 +23,10 @@
         <span></span>
     </div>
     <div class="menu">
-        <a th:href="@{/}">Inicio</a>
-        <a th:href="@{/rutinas}">Rutinas</a>
-        <a th:href="@{/usuario}">Cuenta</a>
-        <a th:href="@{/gestion/usuarios}">Usuarios</a>
-        <a th:href="@{/gestion/rutinas}">RutinasGestion</a>
+      <a th:href="@{/}">Inicio</a>
+      <a th:href="@{/public/rutinas}">Rutinas</a>
+      <a th:href="@{/gestion/usuarios}">Usuarios</a>
+      <a th:href="@{/gestion/rutinas}">RutinasGestion</a>
 
     </div>
 </nav>
@@ -36,6 +35,8 @@
 
   <h1>Ediar Rutina</h1>
   <form method="post" action="#" th:action="@{/rutina/edit/submit}" th:object="${rutinaForm}">
+
+    <input type="hidden" id="id" th:field="*{id}" />
     <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" /></label><br />
     <p>
       <label for="descripcion">Descripción:</label>

@@ -22,7 +22,7 @@ import com.example.rpg0904.services.CategoriaService;
 
 
 @Controller
-@RequestMapping("/categoria")
+@RequestMapping("public/categoria")
 public class CategoriaController {
     @Autowired
     public CategoriaService categoriaService;

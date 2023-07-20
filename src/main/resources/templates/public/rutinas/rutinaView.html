@@ -21,8 +21,9 @@
     </div>
     <div class="menu">
         <a th:href="@{/}">Inicio</a>
-        <a th:href="@{/rutinas}">Rutinas</a>
-        <a th:href="@{/usuario}">Cuenta</a>
+        <a th:href="@{/public/rutinas}">Rutinas</a>
+        <a th:href="@{/gestion/usuarios}">Usuarios</a>
+        <a th:href="@{/gestion/rutinas}">RutinasGestion</a>
 
     </div>
 </nav>
@@ -77,12 +78,13 @@
 
         <h2>Valoraciones</h2>
 
-        <form action="/action_page.php">
+        <form action="#"  method="post" th:action="@{/valoracion/new/submit}" th:object="${valoracionForm}">
             <textarea id="ValoracionTextArea" maxlength="500"></textarea>
 
             <div id="contadorLetras"></div>
             <div id="botonContainer">
-                <input type="submit" id="botonValoracion" value="Submit">
+            
+                <input type="submit" id="botonValoracion"  th:value="enviar" /> 
             </div>
 
         </form>

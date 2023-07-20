@@ -49,7 +49,7 @@ public class Application {
                             Arrays.asList("Tonificación muscular", "Mejora de la fuerza"), 29.99, "Premium"));
 
             rutinaValoracionService.add(new RutinaValoracion(rutinaService.findByNombre("PEAK PERFORMANCE"),
-                    valoracionService.add(new Valoracion(7L, "Buena rutina :)")), usuarioService.findByNombre("Raul")));
+                    valoracionService.add(new Valoracion( "Buena rutina :)")), usuarioService.findByNombre("Raul")));
 
         };
     }

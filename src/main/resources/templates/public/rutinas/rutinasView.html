@@ -12,8 +12,9 @@
     </div>
     <div class="menu">
         <a th:href="@{/}">Inicio</a>
-        <a th:href="@{/rutinas}">Rutinas</a>
-        <a th:href="@{/usuario}">Cuenta</a>
+        <a th:href="@{/public/rutinas}">Rutinas</a>
+        <a th:href="@{/gestion/usuarios}">Usuarios</a>
+        <a th:href="@{/gestion/rutinas}">RutinasGestion</a>
 
     </div>
 </nav>
@@ -57,7 +58,7 @@
 
     <div id="contenido">
         <div th:each="rutina : ${listaRutinas}">
-            <a class="fill-div" th:href="@{/rutina/{idRutina}(idRutina=${rutina.id})}">
+            <a class="fill-div" th:href="@{/public/rutina/{idRutina}(idRutina=${rutina.id})}">
                 <div class="rutina" id="reach">
                     <div th:text="${rutina.nombre}" id="nombreRutina">nombre</div>
                 </div>

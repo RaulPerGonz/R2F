@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" th:href="@{/css/newRutinaFormView.css}">
+</head>
+
+<body>
+  <nav>
+    <a href="#" class="logo"><img src="/images/R2FBlanco.png" alt="Reverse Logo" id="header-img" /></a>
+    <div class="toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu">
+      <a th:href="@{/}">Inicio</a>
+      <a th:href="@{/public/rutinas}">Rutinas</a>
+      <a th:href="@{/gestion/usuarios}">Usuarios</a>
+      <a th:href="@{/gestion/rutinas}">RutinasGestion</a>
+
+    </div>
+  </nav>
+  <hr style="border: none; border-top: 1px solid white;">
+
+
+  <h1>Ediar Rutina</h1>
+  <form method="post" action="#" th:action="@{/gestion/usuarios/edit/submit}" th:object="${usuarioForm}">
+
+    <input type="hidden" id="id" th:field="*{id}" /><br />
+    <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}" /></label><br />
+    <label for="password">Password:</label>
+    <input type="text" id="password" th:field="*{password}" /><br />
+    <label>Rol:</label>
+    <input type="radio" id="admin" name="rol" value="ADMIN" th:field="*{rol}" />
+    <label for="admin">ADMIN</label>
+    <input type="radio" id="titular" name="rol" value="TITULAR" th:field="*{rol}" />
+    <label for="titular">TITULAR</label>
+    <input type="radio" id="usuario" name="rol" value="USUARIO" th:field="*{rol}" />
+    <label for="usuario">USUARIO</label>
+    <br>
+
+    <input type="submit" th:value="enviar" /> <br>
+
+  </form>
+</body>
+
+</html>

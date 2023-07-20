@@ -27,18 +27,18 @@ public class RutinaController {
     @Autowired
     public CategoriaServiceImplBD categoriaService;
 
-    @GetMapping("/rutinas")
+    @GetMapping("/public/rutinas")
     public String mostrarProductos(Model model) {
-        return "redirect:rutinas/pagina/0";
+        return "redirect:/public/rutinas/pagina/0";
 
     }
 
 
-    @GetMapping("/rutinas/pagina/{id}")
+    @GetMapping("/public/rutinas/pagina/{id}")
     public String showPage(@PathVariable Integer id, Model model) {
         int ultPag = rutinaService.getTotalPaginas() - 1;
         if (id < 0 || id > ultPag)
-            return "redirect:/rutinas/pagina/0"; // control de errores
+            return "redirect:/public/rutinas/pagina/0"; // control de errores
         Integer pagSig = ultPag > id ? id + 1 : ultPag;
         Integer pagAnt = id > 0 ? id - 1 : 0;
         model.addAttribute("listaRutinas", rutinaService.findRutinaByPage(id));
@@ -54,7 +54,7 @@ public class RutinaController {
         return "adminViews/gestionRutinasView";
     }
 
-    @GetMapping("/rutina/{id}")
+    @GetMapping("/public/rutina/{id}")
     public String showRutina(@PathVariable Integer id,Model model) {
         model.addAttribute("rutina", rutinaService.findById(id));
       
@@ -100,14 +100,15 @@ public class RutinaController {
         if (bindingResult.hasErrors()) {
             return "adminViews/editarRutinaView";
         } else {
-           // rutinaService.edit(rutina);
-            return "redirect:/rutinas";
+            System.out.println(rutina);
+           rutinaService.edit(rutina);
+            return "redirect:/gestion/rutinas";
         }
     }
 
     @GetMapping("/rutina/delete/{id}")
     public String showDelete(@PathVariable long id) {
-       // rutinaService.delete(id);
-        return "redirect:/productos";
+        rutinaService.delete(id);
+        return "redirect:/gestion/rutinas";
     }
 }

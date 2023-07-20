@@ -26,7 +26,7 @@ public class Valoracion {
     @GeneratedValue
     private Long id;
 
-    private Long puntuacion;
+    
 
     private String comentarios;
 
@@ -36,8 +36,8 @@ public class Valoracion {
     @OneToMany(mappedBy = "valoracion", cascade = CascadeType.REMOVE)
     private List<RutinaValoracion> rutinaValoraciones= new ArrayList<>();
 
-    public Valoracion(Long puntuacion, String comentarios) {
-        this.puntuacion = puntuacion;
+    public Valoracion( String comentarios) {
+       
         this.comentarios = comentarios;
     }
 
